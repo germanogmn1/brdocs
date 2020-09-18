@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BR Docs</title>
+  <link rel="stylesheet" href="/popup.css">
+  <script src="/popup.js" type="module" async></script>
+</head>
+<body>
+  <div id="wrapper">
+    <section id="checkbox-wrapper">
+      <input type="checkbox" id="copy-formatted">
+      <label for="copy-formatted">Copiar com formatação</label>
+    </section>
+    <section>
+      <div id="doc-wrapper-cpf" class="doc-wrapper">
+        <div class="label">CPF:</div>
+        <div class="tooltip">
+          <span class="tooltip-content"></span>
+          <span class="doc-output">000.000.000-00</span>
+        </div>
+        <button type="button" class="btn-round doc-new" title="Gerar novo">
+          <img src="/images/refresh-18dp.svg" width="18" height="18">
+        </button>
+      </div>
+      <div id="doc-wrapper-cnpj" class="doc-wrapper">
+        <div class="label">CNPJ:</div>
+        <div class="tooltip">
+          <span class="tooltip-content"></span>
+          <span class="doc-output">00.000.000/0000-00</span>
+        </div>
+        <button type="button" class="btn-round doc-new" title="Gerar novo">
+          <img src="/images/refresh-18dp.svg" width="18" height="18">
+        </button>
+      </div>
+    </section>
+    <section>
+      <button type="button" id="auto-fill">Preencher campos</button>
+      <div id="auto-fill-message" style="display: none;"></div>
+    </section>
+  </div>
+</body>
+</html>

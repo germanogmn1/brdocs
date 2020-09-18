@@ -1,0 +1,158 @@
+html, body {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+body { margin: 0.8em; }
+
+section {
+  padding: 0.8em 0;
+  margin-bottom: 0.8em 0;
+  border-bottom: 1px solid #ccc;
+}
+section:first-child { padding-top: 0; }
+section:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+#checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+#checkbox-wrapper input {
+  margin-left: 0;
+  margin-right: 0.5em;
+}
+
+.doc-wrapper {
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+}
+.doc-wrapper:last-child { margin-bottom: 0; }
+
+.label {
+  width: 3.2rem;
+}
+
+.btn-round {
+  margin-left: auto;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 50%;
+}
+.btn-round:hover {
+  background: #ccc;
+}
+.btn-round:active,
+.btn-round:focus {
+  outline: none;
+}
+.btn-round:active {
+  background: #bbb;
+}
+.btn-round img {
+  display: block;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-content {
+  visibility: hidden;
+  pointer-events: none; /* prevent from keeping visible when mouse is over */
+  opacity: 0%;
+  transition: opacity, transform 0.1s, 0.1s linear;
+
+  position: absolute;
+  z-index: 1;
+
+  bottom: calc(100% + 5px); /* 5px to clear the little triangle */
+  left: 50%;
+  transform: translate(-50%, 10px);
+
+  white-space: nowrap;
+
+  font-size: 0.9rem;
+  padding: 3px 5px;
+  background: rgba(0,0,0, 0.8);
+  color: #fff;
+  border-radius: 4px;
+}
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+  transform: translate(-50%, 0);
+  opacity: 100%;
+}
+
+.tooltip-content::before { content: 'clique para copiar'; }
+.tooltip-content.copied::before { content: 'copiado!'; }
+
+.tooltip-content::after {
+  /* triangle */
+  content: '';
+  position: absolute;
+  border: 5px solid transparent;
+  border-top-color: rgba(0,0,0, 0.8);
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+.doc-output {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px dashed transparent;
+  padding: 4px 6px;
+  font-weight: bold;
+  font-family: monospace;
+  white-space: nowrap;
+  margin-right: 0.5em;
+}
+.doc-output:hover {
+  border-color: #333;
+  background: #eee;
+  border-radius: 4px;
+}
+
+#auto-fill {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #28a745;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  transition: transform 50ms linear;
+}
+#auto-fill:active, #auto-fill:focus { outline: none; }
+#auto-fill:hover { background: #218838; }
+#auto-fill:active {
+  background: #1e7e34;
+  transform: translate(0, 2px);
+}
+
+#auto-fill-message {
+  background-image: url("/images/info-18dp.svg");
+  background-repeat: no-repeat;
+  padding-left: calc(18px + 0.3em);
+  line-height: 20px;
+
+  margin: 0.8em auto 0 auto;
+  font-style: italic;
+  width: fit-content;
+}
+#auto-fill-message.not-found {
+  background-image: url("/images/error-18dp.svg");
+}
